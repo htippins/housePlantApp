@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 200px;
+    gap: 30px;
+}
+
+#plants {
+    padding: 3px 8px 3px 8px;
+}

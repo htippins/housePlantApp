@@ -4,24 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>When do you need to water your plant next?</h1>
-    <div class="container">
-      <label for="plants">Choose a plant:</label>
-      <select name="plants" id="plants"></select
-      ><br />
-      <label for="date">When did you last water your plant?</label>
-      <input type="date" id="lastWatered" name="lastWatered" />
-      <button type="button" id="btn">Submit</button>
-      <div>
+    <section class="app-container">
+      <div class="first-item">
+        <h1>When do you need to water your plant next?</h1>
+        <label for="plants">Choose a plant:</label>
+        <select name="plants" id="plants"></select
+        ><br />
+        <label for="date">When did you last water your plant?</label>
+        <input type="date" id="lastWatered" name="lastWatered" />
+        <button type="button" id="btn">Submit</button>
+        <button type="button" id="reset-btn">Reset</button>
         <p>
           Your plant is next due to be watered on... <span id="nextDue"></span>
         </p>
       </div>
-    </div>
+      <div class="second-item">
+
+      </div>
+    </section>
     <script src="/app.js"></script>
   </body>
 </html>

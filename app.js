@@ -28,10 +28,18 @@ let plants = [
   },
   {
     name: "Wax Plant",
-    daysBetweenSummer: 7,
-    daysBetweenWinter: 30,
+    daysBetweenSummer: 14,
+    daysBetweenWinter: 28,
     light: "Bright, indirect",
     water: "Low and misting",
+    soil: "Well-draining",
+  },
+  {
+    name: "Mini Monstera",
+    daysBetweenSummer: 4,
+    daysBetweenWinter: 8,
+    light: "Bright, indirect",
+    water: "Moderate",
     soil: "Well-draining",
   },
   {
@@ -40,6 +48,22 @@ let plants = [
     daysBetweenWinter: 4,
     light: "Bright, indirect",
     water: "Low moderate",
+    soil: "Well-draining",
+  },
+  {
+    name: "Peacock Plant",
+    daysBetweenSummer: 2,
+    daysBetweenWinter: 4,
+    light: "Bright, indirect",
+    water: "Moderate-high + misting",
+    soil: "Well-draining",
+  },
+  {
+    name: "Variegated Rubber Plant",
+    daysBetweenSummer: 5,
+    daysBetweenWinter: 12,
+    light: "Bright, indirect",
+    water: "Moderate",
     soil: "Well-draining",
   },
 ];
@@ -52,6 +76,13 @@ for (let i = 0; i < arrLength; i++) {
   option.id = i;
   option.text = plants[i].name;
   dropDown.add(option);
+}
+
+function plantImage(plantID) {
+  //Create an image element
+  let img = document.createElement("IMG");
+  img.src = `../images/plant${plantID}.jpg`;
+  document.querySelector('.second-item').appendChild(img);
 }
 
 //Returns the inputted date
@@ -80,14 +111,19 @@ btn.addEventListener("click", function () {
   const plantID = document.querySelector("#plants").selectedIndex;
   const n = plantID;
   const plantName = plants[n].name;
-  console.log(plantName);
   //Get the inputted last watered date and convert it to a readable string
   const date = lastWateredDate();
-  console.log(date.toDateString());
   //Get the amount of days per plant and calculate when the next watering date is
   const daysTillWater = plants[n].daysBetweenSummer;
   const daysTillWaterDate = addDays(daysTillWater).toDateString();
   //Display the date on the webpage
   const nextWater = document.querySelector("#nextDue");
   nextWater.textContent = daysTillWaterDate;
+  plantImage(n);
+});
+
+const resetBtn = document.querySelector('#reset-btn');
+resetBtn.addEventListener("click", function() {
+  const clearImage = document.querySelector('img');
+  clearImage.remove();
 });
