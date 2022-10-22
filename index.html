@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Shrikhand">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Shrikhand"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
@@ -13,55 +15,53 @@
     <h1>House Plant Water Calculator</h1>
     <section class="app-container">
       <div class="first-item">
-      <div class="dropdowns">
-        <div>
-          <label for="plants">Choose your plant:</label><br>
-        <select name="plants" id="plants"></select>
+        <div class="dropdowns">
+          <div>
+            <label for="plants">Choose your plant:</label><br />
+            <select name="plants" id="plants"></select>
+          </div>
+          <div>
+            <label for="season">Select the season:</label><br />
+            <select type="season" id="season" name="season">
+              <option>Summer</option>
+              <option>Autumn</option>
+              <option>Winter</option>
+              <option>Spring</option>
+            </select>
+          </div>
         </div>
         <div>
-          <label for="season">Select the season:</label><br>
-        <select type="season" id="season" name="season">
-          <option>Summer</option>
-          <option>Autumn</option>
-          <option>Winter</option>
-          <option>Spring</option>
-        </select>
-      </div>
-      </div>
-      <div>
-        <label for="date">When did you last water your plant?</label><br>
-        <input type="date" id="lastWatered" name="lastWatered" />
-        
-      </div>
-      <div>
-        <p>
-          Your plant is next due to be watered on... <span id="nextDue"></span>
-        </p>
-        <p>Water every... <span  id="days-details"></span> </p>
-      </div>
+          <label for="date">When did you last water your plant?</label><br />
+          <input type="date" id="lastWatered" name="lastWatered" />
+        </div>
+        <div>
+          <p>
+            Your plant is next due to be watered on...
+            <span id="nextDue"></span>
+          </p>
+          <p>Water every... <span id="days-details"></span></p>
+        </div>
         <div class="buttons-container">
-        <button type="button" id="btn">Submit</button>
-        <button type="button" id="reset-btn">Reset</button>
-      </div>
+          <button type="button" id="btn">Submit</button>
+          <button type="button" id="reset-btn">Reset</button>
+        </div>
       </div>
       <div class="second-item">
-      <div class="image-div">
-
-       </div>
-       <div class="text-div">
-    <p id="plant-name"></p>
-    <div class="plant-details">
-  <p>
-    <span id="light"></span>
-  </p>
-  <p>
-    <span id="water"></span>
-  </p>
-  <p>
-    <span id="soil"></span>
-  </p>
-</div>
- </div>
+        <div class="image-div"></div>
+        <div class="text-div">
+          <p id="plant-name"></p>
+          <div class="plant-details">
+            <p>
+              <span id="light"></span>
+            </p>
+            <p>
+              <span id="water"></span>
+            </p>
+            <p>
+              <span id="soil"></span>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
     <script src="app.js" type="text/javascript"></script>

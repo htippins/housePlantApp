@@ -1,121 +1,120 @@
 * {
-    margin: 0;
-    line-height: 1.6;
-    font-family: 'Fanwood Text', serif;
+  margin: 0;
+  line-height: 1.6;
+  font-family: "Fanwood Text", serif;
 }
 
 body {
-    background-color: #fefae0;
+  background-color: #fefae0;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 h1 {
-    text-align: center;
-    padding-top: 70px;
-    padding-bottom: 20px;
-    color: #606c38;
-    font-family: 'Shrikhand', serif;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  color: #606c38;
+  font-family: "Shrikhand", serif;
 }
 
 .app-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    padding: 30px 100px 100px 100px;
-    gap: 30px;
-    max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 30px 100px 100px 100px;
+  gap: 30px;
+  max-width: 100%;
 }
 
 .first-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #dda15e;
-    border-radius: 50px;
-    height: 385px;
-    width: 493px;
-    padding: 20px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #dda15e;
+  border-radius: 50px;
+  height: 385px;
+  width: 493px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .second-item {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    background-color: #dda15e;
-    border-radius: 50px;
-    height: 385px;
-    width: 493px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    padding: 20px;
-    gap: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background-color: #dda15e;
+  border-radius: 50px;
+  height: 385px;
+  width: 493px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 20px;
+  gap: 50px;
 }
 
 .second-item {
-    background-image: url(images/background3.jpg);
-    object-fit: fill;
-    background-repeat: no-repeat;
+  background-image: url(images/background3.jpg);
+  object-fit: fill;
+  background-repeat: no-repeat;
 }
 
 .buttons-container {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .buttons-container button {
-    padding: 10px 50px 10px 50px;
-    border-radius: 10px;
-    border: 0 solid black;
-    background-color: #fefae0;
+  padding: 10px 50px 10px 50px;
+  border-radius: 10px;
+  border: 0 solid black;
+  background-color: #fefae0;
 }
 
 .buttons-container button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 #image {
-    height: 200px;
-    width: 200px;
-    padding-top: 20px;
-    padding-left: 20px;
+  height: 200px;
+  width: 200px;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 
 .image-div {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #nextDue {
-    font-family: 'Shrikhand', serif;;
+  font-family: "Shrikhand", serif;
 }
 
-
 #plants {
-    padding: 10px 50px 10px 10px;
+  padding: 10px 50px 10px 10px;
 }
 
 #season {
-    padding: 10px 150px 10px 10px;
+  padding: 10px 150px 10px 10px;
 }
 
 #lastWatered {
-    padding: 10px 20px 5px 10px;
+  padding: 10px 20px 5px 10px;
 }
 
 #plant-name {
-    text-align: right;
-    font-family: 'Shrikhand', serif;
-    padding-right: 30px;
+  text-align: right;
+  font-family: "Shrikhand", serif;
+  padding-right: 30px;
 }
 
 .plant-details {
-    padding-left: 60px;
+  padding-left: 60px;
 }
 
 .dropdowns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
