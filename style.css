@@ -72,6 +72,10 @@ h1 {
     background-color: #fefae0;
 }
 
+.buttons-container button:hover {
+    opacity: 0.8;
+}
+
 #image {
     height: 200px;
     width: 200px;

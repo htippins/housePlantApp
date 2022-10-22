@@ -78,6 +78,8 @@ for (let i = 0; i < arrLength; i++) {
   dropDown.add(option);
 }
 
+
+//Gets the plant image and appends it to the image-div
 function plantImage(plantID) {
   //Create an image element
   let img = document.createElement("IMG");
@@ -106,8 +108,21 @@ function addDays(days) {
 }
 
 //Get days between next watering
-function getDaysBetween() {
-  const plant = getPlant();
+// function getDaysBetween() {
+//   const plant = getPlant();
+// }
+
+
+//Gets the season chosen by the user
+function getSeason(n){
+  const season = document.querySelector('#season').value;
+  let result;
+  if(season === "Summer" || season === "Spring"){
+    result = plants[n].daysBetweenSummer;
+  } else {
+    result = plants[n].daysBetweenWinter;
+  }
+  return result;
 }
 
 //Performs the actions when the submit button is clicked
@@ -120,13 +135,21 @@ btn.addEventListener("click", function () {
 
   //Get the inputted last watered date and convert it to a readable string
   const date = lastWateredDate();
+
   //Get the amount of days per plant and calculate when the next watering date is
-  const daysTillWater = plants[n].daysBetweenSummer;
+  const daysTillWater = getSeason(n);
+
+  // const daysTillWater = plants[n].daysBetweenSummer;
   const daysTillWaterDate = addDays(daysTillWater).toDateString();
+
   //Display the date on the webpage
   const nextWater = document.querySelector("#nextDue");
   nextWater.textContent = daysTillWaterDate;
   plantImage(n);
+
+  const dayDetails = document.querySelector('#days-details');
+  dayDetails.textContent = `${getSeason(n)} days`;
+
   //Gets the soil, water and draining details for each plant
   const soilDetails = plants[n].soil;
   const soilIDSelector = document.querySelector('#soil');
@@ -139,15 +162,17 @@ btn.addEventListener("click", function () {
   const lightDetails = plants[n].light;
   const lightIDSelector = document.querySelector('#light');
   lightIDSelector.textContent = `Light: ${lightDetails}`;
+
   //Displays plant name
   const displayName = document.querySelector('#plant-name');
   displayName.textContent = plantName;
+  console.log(getSeason(n));
 });
 
+//Reset button event
 btn.addEventListener("click", function(){
   btn.disabled = true;
 })
-
 const resetBtn = document.querySelector('#reset-btn');
 resetBtn.addEventListener("click", function() {
   const clearImage = document.querySelector('img');
@@ -162,5 +187,7 @@ resetBtn.addEventListener("click", function() {
   light.textContent = "";
   const displayName = document.querySelector('#plant-name');
   displayName.textContent = "";
+  const days = document.querySelector('#days-details');
+  days.textContent = "";
   btn.disabled = false;
 });
