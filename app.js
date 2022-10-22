@@ -84,7 +84,7 @@ function plantImage(plantID) {
   //Create an image element
   let img = document.createElement("IMG");
   img.id = "image";
-  img.src = `../images/plant${plantID}.png`;
+  img.src = `images/plant${plantID}.png`;
   document.querySelector('.image-div').appendChild(img);
 }
 
