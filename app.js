@@ -81,8 +81,14 @@ for (let i = 0; i < arrLength; i++) {
 function plantImage(plantID) {
   //Create an image element
   let img = document.createElement("IMG");
-  img.src = `../images/plant${plantID}.jpg`;
-  document.querySelector('.second-item').appendChild(img);
+  img.id = "image";
+  img.src = `../images/plant${plantID}.png`;
+  document.querySelector('.image-div').appendChild(img);
+}
+
+function getPlantInfo (info, i) {
+  plantDetails = plants[i].info;
+  return plantDetails;
 }
 
 //Returns the inputted date
@@ -111,6 +117,7 @@ btn.addEventListener("click", function () {
   const plantID = document.querySelector("#plants").selectedIndex;
   const n = plantID;
   const plantName = plants[n].name;
+
   //Get the inputted last watered date and convert it to a readable string
   const date = lastWateredDate();
   //Get the amount of days per plant and calculate when the next watering date is
@@ -120,10 +127,40 @@ btn.addEventListener("click", function () {
   const nextWater = document.querySelector("#nextDue");
   nextWater.textContent = daysTillWaterDate;
   plantImage(n);
+  //Gets the soil, water and draining details for each plant
+  const soilDetails = plants[n].soil;
+  const soilIDSelector = document.querySelector('#soil');
+  soilIDSelector.textContent = `Soil: ${soilDetails}`;
+
+  const waterDetails = plants[n].water;
+  const waterIDSelector = document.querySelector('#water');
+  waterIDSelector.textContent = `Water: ${waterDetails}`;
+
+  const lightDetails = plants[n].light;
+  const lightIDSelector = document.querySelector('#light');
+  lightIDSelector.textContent = `Light: ${lightDetails}`;
+  //Displays plant name
+  const displayName = document.querySelector('#plant-name');
+  displayName.textContent = plantName;
 });
+
+btn.addEventListener("click", function(){
+  btn.disabled = true;
+})
 
 const resetBtn = document.querySelector('#reset-btn');
 resetBtn.addEventListener("click", function() {
   const clearImage = document.querySelector('img');
   clearImage.remove();
+  const text = document.querySelector('#nextDue');
+  text.textContent = "";
+  const soil = document.querySelector('#soil');
+  soil.textContent = "";
+  const water = document.querySelector('#water');
+  water.textContent = "";
+  const light = document.querySelector('#light');
+  light.textContent = "";
+  const displayName = document.querySelector('#plant-name');
+  displayName.textContent = "";
+  btn.disabled = false;
 });
