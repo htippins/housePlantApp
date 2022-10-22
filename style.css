@@ -55,7 +55,7 @@ h1 {
 }
 
 .second-item {
-    background-image: url(/images/background3.jpg);
+    background-image: url(images/background3.jpg);
     object-fit: fill;
     background-repeat: no-repeat;
 }
